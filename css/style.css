@@ -1,11 +1,13 @@
 body {
-  padding: 80px;
-  width: 500px;
-
   font-family: 'Arimo', sans-serif;
   color: #ffffff;
   opacity: 87%;
   background-color: #121212;
+}
+
+.box {
+  font-size: 2vmax;
+  padding: 5vh;
 }
 
 ul {
