@@ -1,99 +1,23 @@
 body {
-  margin: 0 auto;
-  line-height: 2em;
-  padding: 12px;
-  box-sizing: border-box;
-  color: #eee;
-  overflow: auto;
-  background: #1C1B21;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #1C1B21 0%, #1C1B21 50%, #17161C 50%, #17161C 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #1C1B21), color-stop(50%, #1C1B21), color-stop(50%, #17161C), color-stop(100%, #17161C));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #1C1B21 0%, #1C1B21 50%, #17161C 50%, #17161C 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #1C1B21 0%, #1C1B21 50%, #17161C 50%, #17161C 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #1C1B21 0%, #1C1B21 50%, #17161C 50%, #17161C 100%);
-  /* IE10+ */
-  background: linear-gradient(135deg, #1C1B21 0%, #1C1B21 50%, #17161C 50%, #17161C 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1C1B21', endColorstr='#17161C', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-}
+  padding: 80px;
+  width: 500px;
 
-body, html {
-  height: 100%;
-  position: relative;
-}
-
-.box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-}
-
-.box-img {
-  border-radius: 5%;
-  width: 200px;
-  height: 200px;
-}
-
-.box h1 {
-  font-size: 40px;
-  letter-spacing: 4px;
-  font-weight: 100;
-}
-
-.box h5 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  font-weight: 100;
-}
-
-.box p {
-  text-align: justify;
+  font-family: 'Arimo', sans-serif;
+  color: #ffffff;
+  opacity: 87%;
+  background-color: #121212;
 }
 
 ul {
-  display: inline-flex;
   list-style-type: none;
-  margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
-.box li {
-  float: left;
-  margin: 12px;
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.box li a {
-  display: block;
-  transition: all ease-in-out 250ms;
-}
-
-.box li a:hover {
-  color: #b9b9b9;
-}
-
-.meta {
-  text-transform: uppercase;
-  font-family: monospace, Arial, Courier New, Source Sans Pro, sans-serif;
-  letter-spacing: .15em;
-}
-
-.meta a:hover {
-  color: #eee;
-}
-
-.img {
-  float: left;
-  width: 120px;
-  height: 120px;
-  background-size: cover;
+a:hover {
+  color: #64b5f6;
 }
