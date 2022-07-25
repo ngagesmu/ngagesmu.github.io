@@ -1,0 +1,75 @@
+/* animated title */
+/* body {
+      margin: 0px;
+    } */
+
+#anim-container {
+  position: absolute;
+  margin: auto;
+  padding: auto;
+  width: 100vw;
+  top: 1em;
+  height: screen;
+  bottom: 0;
+
+  filter: url(#threshold) blur(0.6px);
+}
+
+#filters {
+  height: 1em;
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  width: 100%;
+  display: block;
+  padding: 0;
+  font-size: 1em;
+  text-align: left;
+  user-select: none;
+}
+
+/* ui stuff */
+body {
+  font-family: "Arimo", "Arial", sans-serif;
+  color: #ffffff;
+  opacity: 87%;
+  background-color: #121212;
+  font-size: 3vmax;
+  padding: 2.5vh;
+  margin: 0px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #64b5f6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* arimo-700 - latin */
+@font-face {
+  font-family: "Arimo";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/arimo-v13-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Arimo Bold"), local("Arimo-Bold"),
+    url("fonts/arimo-v13-latin-700.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/arimo-v13-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("fonts/arimo-v13-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */ url("fonts/arimo-v13-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("fonts/arimo-v13-latin-700.svg#Arimo")
+      format("svg");
+  /* Legacy iOS */
+}
