@@ -6,12 +6,11 @@
 #anim-container {
   position: absolute;
   margin: auto;
-  padding: auto;
-  width: 100vw;
   top: 1em;
-  height: screen;
   bottom: 0;
+  opacity: 10%;
 
+  user-select: none;
   filter: url(#threshold) blur(0.6px);
 }
 
@@ -22,12 +21,12 @@
 #text1,
 #text2 {
   position: absolute;
-  width: 100%;
-  display: block;
   padding: 0;
-  font-size: 1em;
-  text-align: left;
+  font-size: 20vw;
+
   user-select: none;
+  pointer-events: none;
+  text-align: left;
 }
 
 /* ui stuff */
