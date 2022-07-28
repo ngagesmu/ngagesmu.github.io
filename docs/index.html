@@ -30,46 +30,47 @@
     <title>nathan___gage</title>
   </head>
 
-  <body>
-    <!-- animated title -->
-    <div id="anim-container">
-      <span id="text1"></span>
-      <span id="text2"></span>
-    </div>
+  <body class="flex h-screen bg-black">
+    <main class="m-auto text-sm text-center text-white">
+      <!-- animated title -->
+      <div id="anim-container" class="relative pb-6 select-none anim-container">
+        <span id="text1" class="absolute text-md -translate-x-1/2"></span>
+        <span id="text2" class="absolute text-md -translate-x-1/2"></span>
+      </div>
 
-    <svg id="filters">
-      <defs>
-        <filter id="threshold">
-          <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="1 0 0 0 0
+      <svg id="filters" class="h-5">
+        <defs>
+          <filter id="threshold">
+            <feColorMatrix
+              in="SourceGraphic"
+              type="matrix"
+              values="1 0 0 0 0
 									0 1 0 0 0
 									0 0 1 0 0
 									0 0 0 255 -140"
-          />
-        </filter>
-      </defs>
-    </svg>
+            />
+          </filter>
+        </defs>
+      </svg>
 
-    <!-- links -->
-    <ul>
-      <li><a href="https://youtu.be/1oVuSukS5Gk">YOUTUBE</a></li>
-      <li><a href="https://twitter.com/nathan___gage">TWITTER</a></li>
-      <li><a href="https://www.linkedin.com/in/nathanagage/">LINKEDIN</a></li>
-      <li><a href="https://github.com/ngagesmu">GITHUB</a></li>
-      <br />
-      <li>
-        <a href="https://youtu.be/I-ZDDAg6soE"
-          >view my hack@smu ii submission</a
-        >
-      </li>
-      <br />
-      <li>
-        <a href="mailto:contact@nathangage.co">contact me</a>
-      </li>
-    </ul>
-
-    <script src="animate.js"></script>
+      <script src="animate.js"></script>
+      <!-- links -->
+      <ul class="uppercase list-none">
+        <li><a href="https://youtu.be/1oVuSukS5Gk">YouTube</a></li>
+        <li><a href="https://twitter.com/nathan___gage">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/nathanagage/">LinkedIn</a></li>
+        <li><a href="https://github.com/ngagesmu">GitHub</a></li>
+        <br />
+        <li>
+          <a href="https://youtu.be/I-ZDDAg6soE"
+            >View my Hack@SMU II Submission</a
+          >
+        </li>
+        <br />
+        <li>
+          <a href="mailto:contact@nathangage.co">Contact me</a>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
