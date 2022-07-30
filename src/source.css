@@ -2,72 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* animated title */
-@keyframes morph-title {
-  from {
-    opacity: 0%;
-    filter: blur(100px);
-  }
-  40% {
-    opacity: 60%;
-    filter: blur(10px);
-  }
-  60% {
-    opacity: 100%;
-    filter: blur(0px);
-  }
-  to {
-    opacity: 100%;
-    filter: blur(0px);
-  }
-}
-
-#morphA,
-#morphB {
-  animation-name: morph-title;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-direction: alternate;
-}
-
-#morphB {
-  opacity: 0%;
-  animation-delay: 4s;
-}
-
-/* animated links */
-@keyframes morph-links {
-  from {
-    opacity: 0%;
-    filter: blur(100px);
-  }
-  1% {
-    opacity: 60%;
-    filter: blur(10px);
-  }
-  to {
-    opacity: 100%;
-    filter: blur(0px);
-  }
+#anim-container {
+  filter: url(#threshold) blur(0.8px);
 }
 
 @layer base {
-  .morph {
-    filter: url(#threshold);
-  }
-
   a {
-    @apply no-underline ease-in-out duration-500 transition-all text-blue;
-    animation-name: morph-links;
-    animation-iteration-count: 1;
-    animation-duration: 0.9s;
+    @apply no-underline ease-in-out duration-500 transition-all blur-sm text-blue;
   }
-
   a:hover {
-    @apply text-white ease-out transition-all blur-md;
+    @apply text-white ease-out transition-all blur-none;
   }
 }
 
+/* arimo-700 - latin */
 @font-face {
   font-family: "Arimo";
   font-style: normal;
@@ -86,7 +34,6 @@
   /* Legacy iOS */
 }
 
-/* color settings */
 @supports (-webkit-touch-callout: none) {
   .h-screen {
     height: -webkit-fill-available;
