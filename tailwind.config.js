@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       blur: {
         sm: "0.8px",
+        md: "1.4px",
       },
     },
   },

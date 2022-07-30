@@ -43,10 +43,14 @@
 
   <body class="flex h-screen bg-black">
     <main class="m-auto text-sm text-center text-white">
-      <!-- animated title -->
-      <div id="anim-container" class="relative pb-6 select-none anim-container">
-        <span id="text1" class="absolute text-md -translate-x-1/2"></span>
-        <span id="text2" class="absolute text-md -translate-x-1/2"></span>
+      <!-- new title -->
+      <div class="relative pb-6 select-none morph">
+        <span id="morphA" class="absolute text-md -translate-x-1/2"
+          >NATHAN</span
+        >
+        <span id="morphB" class="absolute text-md -translate-x-1/2"
+          >__GAGE</span
+        >
       </div>
 
       <svg id="filters" class="h-5">
@@ -64,9 +68,8 @@
         </defs>
       </svg>
 
-      <script src="animate.js"></script>
       <!-- links -->
-      <ul class="uppercase list-none">
+      <ul class="uppercase list-none morph">
         <li><a href="https://youtu.be/1oVuSukS5Gk">YouTube</a></li>
         <li><a href="https://twitter.com/nathan___gage">Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/nathanagage/">LinkedIn</a></li>
