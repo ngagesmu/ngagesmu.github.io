@@ -12,6 +12,6 @@
   "scripts": {
     "watch-tailwind": "yarn tailwindcss -i src/source.css -o docs/styles.css -w --minify",
     "build-tailwind": "yarn tailwindcss -i src/source.css -o docs/styles.css --minify",
-    "dev": "yarn tailwindcss -i src/source.css -o docs/styles.css -w --minify & reload -b -d ~/Projects/ngagesmu.github.io/docs/"
+    "dev": "yarn tailwindcss -i src/source.css -o docs/styles.css -w --minify & reload -b -d docs/"
   }
 }
