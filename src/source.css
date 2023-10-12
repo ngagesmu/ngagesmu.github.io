@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-#anim-container {
-  filter: url(#threshold) blur(0.8px);
+.anim-container {
+  filter: url(#threshold);
 }
 
 @layer base {
-  a {
-    @apply no-underline ease-in-out duration-500 transition-all blur-sm text-blue;
-  }
   a:hover {
-    @apply text-white ease-out transition-all blur-none;
+    @apply text-white ease-out transition-all;
+  }
+  a {
+    @apply text-blue ease-in-out duration-500 transition-all no-underline;
   }
 }
 

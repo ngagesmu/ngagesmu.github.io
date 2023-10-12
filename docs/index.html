@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="theme-color"
+      content="#121212"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#121212"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta name="apple-mobile-web-app-status-bar-style" content="#121212" />
 
     <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!--tailwind-->
@@ -23,32 +44,47 @@
   <body class="flex h-screen bg-black">
     <main class="m-auto text-sm text-center text-white">
       <!-- animated title -->
-      <div id="anim-container" class="relative pb-6 select-none anim-container">
-        <span id="text1" class="absolute text-md -translate-x-1/2"></span>
-        <span id="text2" class="absolute text-md -translate-x-1/2"></span>
+      <div
+        id="titleparent"
+        class="relative pb-6 select-none pointer-events-none anim-container"
+      >
+        <span id="title1" class="absolute text-md -translate-x-1/2"></span>
+        <span id="title2" class="absolute text-md -translate-x-1/2"></span>
       </div>
 
-      <svg id="filters" class="h-5">
+      <!-- links -->
+      <ul class="uppercase list-none">
+        <li class="pt-5 pb-5">
+          <div>Machine Learning Engineer</div>
+          <div>@ Cognitive Space</div>
+        </li>
+
+        <li><a href="https://twitter.com/nathan___gage">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/nathanagage/">LinkedIn</a></li>
+        <li><a href="mailto:contact@nathangage.co">Contact me</a></li>
+
+        <li class="pt-5 pb-5">
+          <div>Posts</div>
+        </li>
+        <!-- <li><a>Overdosing on melatonin</a></li> -->
+      </ul>
+
+      <svg class="pointer-events-none select-none">
         <defs>
           <filter id="threshold">
-          <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+            <feColorMatrix
+              in="SourceGraphic"
+              type="matrix"
+              values="1 0 0 0 0
 									0 1 0 0 0
 									0 0 1 0 0
-									0 0 0 255 -140" />
+									0 0 0 255 -140"
+            />
           </filter>
         </defs>
       </svg>
 
       <script src="animate.js"></script>
-      <!-- links -->
-      <ul class="uppercase list-none">
-        <!-- <li><a href="https://youtu.be/1oVuSukS5Gk?t=21">YouTube</a></li> -->
-        <li><a href="https://twitter.com/nathan___gage">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/nathanagage/">LinkedIn</a></li>
-        <li>
-          <a href="mailto:contact@nathangage.co">Contact me</a>
-        </li>
-      </ul>
     </main>
   </body>
 </html>
