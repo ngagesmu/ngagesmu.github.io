@@ -1,81 +1,121 @@
-const elts = {
-  text1: document.getElementById("text1"),
-  text2: document.getElementById("text2")
-};
-
-const texts = [
-  "NATHAN",
-  "GAGE__"
-];
-
+// -- constants
 const morphTime = 2.64;
 const cooldownTime = 1.62;
+const delayBetweenTitles = 368;
 
-let textIndex = texts.length - 1;
-let time = new Date();
-let morph = 0;
-let cooldown = cooldownTime;
+// -- text pairs and their corresponding DOM elements
+const textPairs = [
+  ["NATHAN", "__GAGE"],
+  // ["BLOG__", "POSTS"]
+];
+const eltPairs = [
+  {
+    parent: document.getElementById("titleparent"),
+    text1: document.getElementById("title1"),
+    text2: document.getElementById("title2"),
+  },
+  // {
+  //   text1: document.getElementById("blog1"),
+  //   text2: document.getElementById("blog2")
+  // }
+];
 
-elts.text1.textContent = texts[textIndex % texts.length];
-elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+// -- state
+const textIndices = new Array(textPairs.length).fill(textPairs[0].length - 1);
+const cooldowns = new Array(textPairs.length).fill(cooldownTime);
+const morphs = new Array(textPairs.length).fill(0);
 
-function doMorph() {
-  morph -= cooldown;
-  cooldown = 0;
+// -- initialize
+eltPairs.forEach((pair, i) => {
+  pair.text1.textContent = textPairs[i][textIndices[i] % textPairs[i].length];
+  pair.text2.textContent =
+    textPairs[i][(textIndices[i] + 1) % textPairs[i].length];
+});
 
-  let fraction = morph / morphTime;
+// -- animation functions
+function calculateBlurEffect(fraction) {
+  return `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+}
 
-  if (fraction > 1) {
-    cooldown = cooldownTime;
-    fraction = 1;
+function calculateOpacityEffect(fraction) {
+  return `${Math.pow(fraction, 0.4) * 100}%`;
+}
+
+function setMorph(index, fraction) {
+  const pair = eltPairs[index];
+  const reversedFraction = 1 - fraction;
+
+  pair.text2.style.filter = calculateBlurEffect(fraction);
+  pair.text2.style.opacity = calculateOpacityEffect(fraction);
+
+  pair.text1.style.filter = calculateBlurEffect(reversedFraction);
+  pair.text1.style.opacity = calculateOpacityEffect(reversedFraction);
+
+  pair.text1.textContent =
+    textPairs[index][textIndices[index] % textPairs[index].length];
+  pair.text2.textContent =
+    textPairs[index][(textIndices[index] + 1) % textPairs[index].length];
+
+  const isText1Visible = pair.text1.style.opacity === "1";
+  const isText2Visible = pair.text2.style.opacity === "1";
+
+  if (isText1Visible || isText2Visible) {
+    pair.parent.style.filter = "none";
+  } else {
+    pair.parent.style.filter = `url(#threshold)`;
+  }
+}
+
+function doMorph(index) {
+  morphs[index] -= cooldowns[index];
+  cooldowns[index] = 0;
+
+  const fraction = Math.min(morphs[index] / morphTime, 1);
+
+  if (fraction === 1) {
+    cooldowns[index] = cooldownTime;
   }
 
-  setMorph(fraction);
+  setMorph(index, fraction);
 }
 
-function setMorph(fraction) {
-  elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-  elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+function doCooldown(index) {
+  morphs[index] = 0;
 
-  fraction = 1 - fraction;
-  elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-  elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+  const pair = eltPairs[index];
+  pair.text2.style.filter = "";
+  pair.text2.style.opacity = "100%";
 
-  elts.text1.textContent = texts[textIndex % texts.length];
-  elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+  pair.text1.style.filter = "";
+  pair.text1.style.opacity = "0%";
 }
 
-function doCooldown() {
-  morph = 0;
+function initAnimationForPair(index) {
+  let lastFrameTime = new Date();
 
-  elts.text2.style.filter = "";
-  elts.text2.style.opacity = "100%";
+  function animatePair() {
+    requestAnimationFrame(animatePair);
 
-  elts.text1.style.filter = "";
-  elts.text1.style.opacity = "0%";
-}
+    const currentTime = new Date();
+    const dt = (currentTime - lastFrameTime) / 1000;
+    cooldowns[index] -= dt;
 
-function animate() {
-  requestAnimationFrame(animate);
-
-  let newTime = new Date();
-  let shouldIncrementIndex = cooldown > 0;
-  let dt = (newTime - time) / 1000;
-  time = newTime;
-
-  cooldown -= dt;
-
-  if (cooldown <= 0) {
-    if (shouldIncrementIndex) {
-      textIndex++;
+    if (cooldowns[index] <= 0) {
+      if (morphs[index] === 0) {
+        textIndices[index]++;
+      }
+      doMorph(index);
+    } else {
+      doCooldown(index);
     }
 
-    doMorph();
-  } else {
-    doCooldown();
+    lastFrameTime = currentTime;
   }
+
+  animatePair();
 }
 
-animate();
-
-
+// -- start animation
+eltPairs.forEach((_, i) => {
+  setTimeout(() => initAnimationForPair(i), i * delayBetweenTitles);
+});
