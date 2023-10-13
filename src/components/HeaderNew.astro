@@ -13,9 +13,9 @@ import { SITE_TITLE } from "../consts";
 		</div>
 		<div class="social-links">
 			<HeaderLinkNew href="https://x.com/nathan___gage">X.com</HeaderLinkNew>
-			<span>~</span>
+			<span>-</span>
 			<HeaderLinkNew href="mailto:contact@nathangage.co">email</HeaderLinkNew>
-			<span>~</span>
+			<span>-</span>
 			<HeaderLinkNew href="https://linkedin.com/in/nathanagage">
 				LinkedIn
 			</HeaderLinkNew>
@@ -28,7 +28,7 @@ import { SITE_TITLE } from "../consts";
 		@apply m-auto py-0 px-1 bg-transparent;
 	}
 	nav {
-		@apply flex justify-between;
+		@apply grid grid-cols-3 justify-items-center justify-evenly; 
 	}
 	.social-links {
 		@apply flex gap-1;
