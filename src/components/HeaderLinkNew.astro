@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"a">;
+
+const { href, class: className, ...props } = Astro.props;
+const { pathname } = Astro.url;
+const isActive = href === pathname || href == pathname.replace(/\/$/, "");
+---
+
+<a href={href} class:list={[]} {...props}>
+	<slot />
+</a>
+
+<style>
+	a {
+		@apply text-blue-400 east-in-out duration-500 transition-colors no-underline;
+	}
+	a:hover {
+		@apply text-white ease-out transition-colors;
+	}
+	a.active {
+		@apply text-white;
+	}
+</style>
