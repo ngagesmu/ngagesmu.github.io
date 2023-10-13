@@ -9,4 +9,3 @@ export default defineConfig({
   site: "https://nathangage.co",
   integrations: [mdx(), sitemap(), tailwind()],
 });
-

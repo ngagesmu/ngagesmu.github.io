@@ -1,28 +1,30 @@
-@import '@fontsource-variable/arimo'
+/* @import '@fontsource-variable/arimo' */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	@apply uppercase font-bold;
-}
+@layer base {
+	html {
+		@apply antialiased bg-black text-white;
+	}
 
-a {
-	@apply text-blue ease-in-out duration-500 transition-colors no-underline;
-}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply uppercase font-bold;
+	}
 
-a:hover {
-	@apply text-white ease-out transition-colors;
-}
+	a {
+		@apply text-blue ease-in-out duration-500 transition-colors no-underline;
+	}
 
-:root {
-	@apply bg-black;
+	a:hover {
+		@apply text-white ease-out transition-colors;
+	}
 }
 
 /*
