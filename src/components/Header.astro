@@ -1,36 +1,25 @@
 ---
-import HeaderLinkNew from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+
+const { title } = Astro.props;
 ---
 
-<header>
-	<nav>
-		<div class="site-links">
-			<HeaderLinkNew href="/posts">Posts</HeaderLinkNew>
+<header class="mx-auto py-0 bg-transparent">
+	<nav class="grid grid-cols-2 md:grid-cols-3">
+		<div class="justify-start">
+			<HeaderLink href="/posts">Posts</HeaderLink>
 		</div>
-		<div class="site-title">
-			<HeaderLinkNew href="/">{SITE_TITLE}</HeaderLinkNew>
+		<div class="md:flex hidden justify-center">
+			<HeaderLink href="/">{title}</HeaderLink>
 		</div>
-		<div class="social-links">
-			<HeaderLinkNew href="https://x.com/nathan___gage">X.com</HeaderLinkNew>
+		<div class="flex gap-1 justify-end">
+			<HeaderLink href="https://x.com/nathan___gage">X.com</HeaderLink>
 			<span>❙</span>
-			<HeaderLinkNew href="mailto:contact@nathangage.co">email</HeaderLinkNew>
+			<HeaderLink href="mailto:contact@nathangage.co">email</HeaderLink>
 			<span>❙</span>
-			<HeaderLinkNew href="https://linkedin.com/in/nathanagage">
+			<HeaderLink href="https://linkedin.com/in/nathanagage">
 				LinkedIn
-			</HeaderLinkNew>
+			</HeaderLink>
 		</div>
 	</nav>
 </header>
-
-<style>
-	header {
-		@apply m-auto py-0 px-1 bg-transparent;
-	}
-	nav {
-		@apply grid grid-cols-3 justify-items-center justify-evenly; 
-	}
-	.social-links {
-		@apply flex gap-1;
-	}
-</style>
