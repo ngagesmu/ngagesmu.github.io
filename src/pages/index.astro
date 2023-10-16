@@ -1,14 +1,24 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { SITE_DESCRIPTION, SITE_TITLE, SOCIAL_LINKS } from "../consts";
 ---
 
 <!doctype html>
 <head>
-	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
 
-<body>
-	<Header title={SITE_TITLE}/>
+<body class="flex flex-col min-h-screen">
+  <Header class="absolute w-screen" title={SITE_TITLE} />
+
+  <main
+    class="grow flex flex-col gap-2 uppercase font-bold text-xl text-center justify-center place-content-center place-items-center"
+  >
+    <h1>Nathan Gage</h1>
+    <div class="flex flex-col">
+      <a href="/posts">/Posts</a>
+	  <a href="/about">/About</a>
+    </div>
+  </main>
 </body>
