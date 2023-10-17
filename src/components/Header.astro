@@ -5,12 +5,12 @@ import { SOCIAL_LINKS } from "../consts";
 const { title, class: className } = Astro.props;
 ---
 
-<header class=`mx-auto py-1 px-2 bg-transparent absolute w-screen ${className}`>
+<header class=`bg-transparent px-2 py-1 ${className}`>
     <nav class="grid grid-cols-2 md:grid-cols-3">
         <div class="justify-start">
             <HeaderLink href="/posts">Posts</HeaderLink>
         </div>
-        <div class="md:flex hidden justify-center">
+        <div class="md:flex hidden justify-center text-center">
             <HeaderLink href="/">{title}</HeaderLink>
         </div>
         <div class="flex gap-1 justify-end">
