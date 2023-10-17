@@ -5,25 +5,27 @@ import { SOCIAL_LINKS } from "../consts";
 const { title, class: className } = Astro.props;
 ---
 
-<header class=`mx-auto py-1 px-2 bg-transparent ${className}`>
-  <nav class="grid grid-cols-2 md:grid-cols-3">
-    <div class="justify-start">
-      <HeaderLink href="/posts">Posts</HeaderLink>
-    </div>
-    <div class="md:flex hidden justify-center">
-      <HeaderLink href="/">{title}</HeaderLink>
-    </div>
-    <div class="flex gap-1 justify-end">
-      <nav class="flex gap-1 justify-end">
-        {
-          SOCIAL_LINKS.map(({ siteName, link }, index) => (
-            <>
-              <HeaderLink href={link}>{siteName}</HeaderLink>
-              {index !== SOCIAL_LINKS.length - 1 && <span>❙</span>}
-            </>
-          ))
-        }
-      </nav>
-    </div>
-  </nav>
+<header class=`mx-auto py-1 px-2 bg-transparent absolute w-screen ${className}`>
+    <nav class="grid grid-cols-2 md:grid-cols-3">
+        <div class="justify-start">
+            <HeaderLink href="/posts">Posts</HeaderLink>
+        </div>
+        <div class="md:flex hidden justify-center">
+            <HeaderLink href="/">{title}</HeaderLink>
+        </div>
+        <div class="flex gap-1 justify-end">
+            <nav class="flex gap-1 justify-end">
+                {
+                    SOCIAL_LINKS.map(({ siteName, link }, index) => (
+                        <>
+                            <HeaderLink href={link}>{siteName}</HeaderLink>
+                            {index !== SOCIAL_LINKS.length - 1 && (
+                                <span>❙</span>
+                            )}
+                        </>
+                    ))
+                }
+            </nav>
+        </div>
+    </nav>
 </header>
