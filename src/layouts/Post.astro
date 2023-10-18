@@ -1,0 +1,143 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"post">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.documentElement.scrollHeight > window.innerHeight) {
+      document.body.style.paddingBottom = "6rem";
+    }
+  });
+</script>
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header title={title} />
+    <main>
+      <div class="flex flex-col max-w-screen-lg">
+        <h1 class="block md:hidden">{title}</h1>
+        <div
+          class="flex flex-col pt-4 md:pt-12 pb-12 md:pb-24 font-title font-bold uppercase"
+        >
+          <div class:list={["decoration-4", { "line-through": updatedDate }]}>
+            <FormattedDate date={pubDate} />
+          </div>
+          {
+            updatedDate && (
+              <div class="justify-end">
+                Updated: <FormattedDate date={updatedDate} />
+              </div>
+            )
+          }
+        </div>
+        <slot />
+      </div>
+    </main>
+    <style is:global>
+      img {
+        @apply mx-auto hover:rounded-3xl transition-all duration-700;
+      }
+
+      table {
+        @apply divide-y divide-neutral-600 m-auto
+        overflow-x-auto overflow-y-hidden bg-neutral-800;
+      }
+
+      thead > tr {
+        @apply divide-x divide-neutral-600;
+      }
+
+      tbody > tr {
+        @apply divide-x divide-neutral-600;
+      }
+
+      th {
+        @apply px-6 py-4 font-bold uppercase tracking-wider;
+      }
+
+      td {
+        @apply px-4 py-4;
+      }
+
+      blockquote {
+        @apply border-l-4 border-green-800 p-4 my-4;
+      }
+      blockquote > p {
+        @apply text-xl font-serif tracking-wider;
+      }
+
+      pre {
+        @apply p-4 focus:ring-green-800
+               ring-2 ring-transparent rounded-sm
+               transition-all duration-200;
+      }
+
+      pre > code {
+        all: unset;
+        @apply text-lg;
+      }
+
+      ul {
+        @apply list-circle list-inside;
+      }
+
+      ol {
+        @apply list-decimal list-inside;
+      }
+
+      li > ul,
+      li > ol {
+        @apply ml-8;
+      }
+
+      p {
+        @apply text-lg pb-2;
+      }
+
+      h1 {
+        @apply pb-4 pt-6;
+      }
+
+      h2 {
+        @apply pb-4 pt-4;
+      }
+
+      h3 {
+        @apply pt-4;
+      }
+
+      h5,
+      h6 {
+        @apply opacity-70;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @apply font-bold uppercase py-2;
+      }
+
+      kbd {
+        @apply select-none bg-neutral-700 border border-neutral-600 rounded px-2 py-1;
+      }
+
+      mark {
+        @apply bg-green-800 text-neutral-100 px-0.5;
+      }
+    </style>
+  </body>
+</html>

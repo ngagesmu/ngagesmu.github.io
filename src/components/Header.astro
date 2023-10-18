@@ -1,0 +1,30 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SOCIAL_LINKS } from "../consts";
+
+const { title, class: className } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<header class=`bg-transparent px-2 py-1 ${className} font-bold font-title uppercase`>
+  <nav class="grid grid-cols-2 md:grid-cols-3">
+    <div class="flex gap-1 justify-start align-bottom">
+      {
+        SOCIAL_LINKS.map(({ siteName, link }, index) => (
+          <>
+            <HeaderLink href={link}>{siteName}</HeaderLink>
+            {index !== SOCIAL_LINKS.length - 1 && <span class="align-middle">*</span>}
+          </>
+        ))
+      }
+    </div>
+
+    <div class="md:flex hidden justify-center text-center">
+      <HeaderLink href={pathname}>{title}</HeaderLink>
+    </div>
+
+    <div class="flex justify-end">
+      <HeaderLink href="/">Home</HeaderLink>
+    </div>
+  </nav>
+</header>
