@@ -545,6 +545,21 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/arimo/-/arimo-5.0.16.tgz#b4a109d086ffac833099f58179fb054eec892370"
   integrity sha512-Vauex+gYSMOC3ay3Wuy9f17HPvm/82gurmHIKzhXKA7pHTPnMNq7LUPvO8bZKRGK9sw/gIxP3O6AyFI3iwc+yA==
 
+"@fontsource/comic-mono@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/comic-mono/-/comic-mono-5.0.7.tgz#357135e0765330f3f4aef953e06479923fe25952"
+  integrity sha512-W0yydmV91blWUI0y0A7dTajzAwuoHyVeVsK56ueCcgnI99i2E6Cuwui2CXK6JSrYKjWfu1pUmILBSiA9Mvcc5w==
+
+"@fontsource/radley@^5.0.15":
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/@fontsource/radley/-/radley-5.0.15.tgz#29b1a112ab14b9c2d42e0e1650ec1ca56e7dad1b"
+  integrity sha512-W/pq4o+9qnhkXifAzuF2fYmDqG5TEfJbTt3RKQba/gGKXQ2bTL1TOPzqHZUQsPnRtyiaEP5NtbKiuEROvtLHbQ==
+
+"@fontsource/ubuntu@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/ubuntu/-/ubuntu-5.0.8.tgz#5009cfaf00057277acdb88caa3537686248a484d"
+  integrity sha512-lZY64hVXrnkt/+5jRfm0uMiRv+lmrIdnATAnDj1SPqebmI2UDf3KC9p4rOkIYsBOjOsD6seJ82GIQE067DSvWw==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"

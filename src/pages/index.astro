@@ -1,24 +1,46 @@
 ---
+import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE, SOCIAL_LINKS } from "../consts";
+
+const posts = (await getCollection("post")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    </head>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
 
-    <body>
-        <Header class="fixed w-full" title={SITE_TITLE} />
+  <body>
+    <main
+      class="flex flex-col first:pt-0 last:pb-0 gap-4 uppercase text-xl
+             leading-tight text-center font-bold font-title"
+    >
+      <h1>Nathan Gage</h1>
+      <div>
+        <div>Machine Learning Engineer</div>
+        <div>@ Cognitive Space</div>
+      </div>
 
-        <main class="flex flex-col gap-2">
-            <h1>Nathan Gage</h1>
-            <div class="flex flex-col">
-                <a href="/posts">/Posts</a>
-                <a href="/about">/About</a>
-            </div>
-        </main>
-    </body>
+      <div class="flex flex-col">
+        {
+          SOCIAL_LINKS.map(({ siteName, link }) => (
+            <a href={link}>{siteName}</a>
+          ))
+        }
+      </div>
+      <h2>Posts</h2>
+      <div class="flex flex-col gap-2">
+        {
+          posts.map((post, index) => (
+            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+          ))
+        }
+      </div>
+    </main>
+  </body>
 </html>
