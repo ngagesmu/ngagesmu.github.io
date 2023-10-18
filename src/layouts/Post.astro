@@ -102,7 +102,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       }
 
       p {
-        @apply text-lg pb-2;
+        @apply text-lg pb-4 leading-snug;
       }
 
       h1 {
@@ -117,18 +117,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         @apply pt-4;
       }
 
-      h5,
-      h6 {
-        @apply opacity-70;
-      }
-
       h1,
       h2,
       h3,
       h4,
       h5,
       h6 {
-        @apply font-bold uppercase py-2;
+        @apply font-bold uppercase py-2 opacity-70;
       }
 
       kbd {
