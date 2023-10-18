@@ -38,7 +38,7 @@ const posts = (await getCollection("post")).sort(
       <div class="flex flex-col gap-2">
         {
           posts.map((post, index) => (
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+            <a href={`/post/${post.slug}`}>{post.data.title}</a>
           ))
         }
       </div>
