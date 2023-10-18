@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE, SOCIAL_LINKS } from "../consts";
+import AnimatedTitle from "../components/AnimatedTitle.astro";
 
 const posts = (await getCollection("post")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -20,7 +21,7 @@ const posts = (await getCollection("post")).sort(
       class="flex flex-col first:pt-0 last:pb-0 gap-4 uppercase text-xl
              leading-tight text-center font-bold font-title"
     >
-      <h1>Nathan Gage</h1>
+      <AnimatedTitle />
       <div>
         <div>Machine Learning Engineer</div>
         <div>@ Cognitive Space</div>

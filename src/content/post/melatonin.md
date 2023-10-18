@@ -1,6 +1,5 @@
 ---
 title: 'Overdosing on Melatonin'
-short_title: 'Melatonin'
 description: 'Melatonin is being overdosed. The proper dose is 0.3mg - 1.5mg'
 pubDate: 'Oct 12 16:42:18 2023 -0500'
 ---
