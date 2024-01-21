@@ -11,9 +11,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Ubuntu", ...defaultTheme.fontFamily.sans],
+        sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
         title: ["Arimo", ...defaultTheme.fontFamily.sans],
-        mono: ["Comic Mono", ...defaultTheme.fontFamily.mono],
+        mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
         serif: ["Radley", ...defaultTheme.fontFamily.serif],
       },
       colors: {
