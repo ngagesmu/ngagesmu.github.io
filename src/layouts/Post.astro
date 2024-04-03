@@ -51,6 +51,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         @apply mx-auto hover:rounded-3xl transition-all duration-700;
       }
 
+      main {
+        @apply mb-8;
+      }
+
       table {
         @apply divide-y divide-neutral-600 m-auto
         overflow-x-auto overflow-y-hidden bg-neutral-800;
@@ -76,7 +80,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         @apply border-l-4 border-green-800 p-4 my-4;
       }
       blockquote > p {
-        @apply text-xl font-serif tracking-wider;
+        @apply font-serif font-medium text-xl tracking-wide;
       }
 
       pre {
@@ -108,15 +112,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       }
 
       h1 {
-        @apply pb-4 pt-6;
+        @apply pb-4 mt-6;
       }
 
       h2 {
-        @apply pb-4 pt-4;
+        @apply pb-4 mt-4;
       }
 
       h3 {
-        @apply pt-4;
+        @apply mt-4;
       }
 
       h1,

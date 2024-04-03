@@ -14,7 +14,7 @@ export default {
         sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
         title: ["Arimo", ...defaultTheme.fontFamily.sans],
         mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
-        serif: ["Radley", ...defaultTheme.fontFamily.serif],
+        serif: ["Lora", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         blue: "#64b5f6",
