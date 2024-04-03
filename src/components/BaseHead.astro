@@ -57,7 +57,11 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
   content="#121212"
   media="(prefers-color-scheme: dark)"
 />
-<meta name="apple-mobile-web-app-status-bar-style" content="#121212" />
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
